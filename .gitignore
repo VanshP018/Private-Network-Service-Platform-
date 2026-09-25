@@ -1,0 +1,12 @@
+# Local, machine-specific - never commit real IPs or certs
+team/team.env
+*.pem
+*.key
+.venv/
+__pycache__/
+*.pyc
+.DS_Store
+
+# Wireshark captures can be large - keep only the final chosen ones
+*.pcapng
+!evidence/**/*.pcapng
