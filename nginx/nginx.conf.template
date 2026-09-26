@@ -11,8 +11,8 @@
 #   4. Restart nginx: sudo brew services restart nginx
 
 upstream backend_pool {
-    server <MAC3_IP>:3001 max_fails=2 fail_timeout=10s;   # Backend A
-    server <MAC4_IP>:3002 max_fails=2 fail_timeout=10s;   # Backend B
+    server 10.7.8.217:3001 max_fails=2 fail_timeout=10s;   # Backend A
+    server 10.7.8.217:3002 max_fails=2 fail_timeout=10s;   # Backend B
     # default strategy is round-robin; for least-connections instead:
     # least_conn;
 }
