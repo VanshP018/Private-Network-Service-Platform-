@@ -81,6 +81,13 @@ Verify locally:
 dig @127.0.0.1 app.teamX.test
 ```
 
+If the DNS Mac should also resolve public internet domains, the supplied
+template forwards those queries to `8.8.8.8`. After changing the config, run
+`sudo brew services restart dnsmasq` on the DNS Mac. Configure that Mac to use
+`127.0.0.1` for DNS; configure other Macs on the LAN to use the DNS Mac's
+`MAC1_IP` (not `127.0.0.1`). Avoid adding a public DNS server as a secondary
+resolver on clients that need the private `teamX.test` records.
+
 ## 4. Mac 3 (Backend A) and Mac 4 (Backend B)
 
 Both machines run the exact same code — only the role differs:
@@ -118,8 +125,12 @@ nano /opt/homebrew/etc/nginx/servers/cn-project.conf   # fill in placeholders
 sudo brew services restart nginx
 ```
 
-Set your own client Mac's DNS resolver to Mac 1's IP (System Settings →
-Network → Wi-Fi → Details → DNS), then verify:
+If port 80 refuses connections, run `sudo lsof -nP -iTCP:80 -sTCP:LISTEN` on
+the nginx Mac. If nothing is listening, restart nginx there with
+`sudo brew services restart nginx` and check again.
+
+Set the client Mac's DNS resolver to Mac 1's IP (System Settings → Network →
+Wi-Fi → Details → DNS), then verify:
 
 ```bash
 dig app.teamX.test          # should resolve to Mac 2's IP

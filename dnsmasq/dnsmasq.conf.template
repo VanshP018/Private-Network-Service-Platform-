@@ -15,11 +15,10 @@ address=/api.teamX.test/<MAC2_IP>
 listen-address=127.0.0.1,<MAC1_IP>
 
 # Don't forward to /etc/resolv.conf or poll it for changes -
-# this server should ONLY answer for our private test domain.
-# (If you also want it to resolve normal internet domains for convenience,
-# comment out no-resolv and it will fall back to your normal DNS.)
+# forward other domains to a public resolver instead.
 no-resolv
 no-poll
+server=8.8.8.8
 
 # Optional: short TTL for Phase 2, Extension B (DNS TTL demo)
 # local-ttl=30
