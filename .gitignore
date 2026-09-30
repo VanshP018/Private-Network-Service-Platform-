@@ -7,6 +7,9 @@ __pycache__/
 *.pyc
 .DS_Store
 
+# Reference projects
+Computer-Network-Project/
+
 # Wireshark captures can be large - keep only the final chosen ones
 *.pcapng
 !evidence/**/*.pcapng
