@@ -122,6 +122,7 @@ curl -i -H 'If-None-Match: "cn-cache-v1"' https://app.teamX.test/api/cache
 
 ## Detailed Documentation Links
 
+- [Project Playbook, Troubleshooting & Runbook](docs/project-playbook-and-troubleshooting.md)
 - [Architecture & Sequence Details](docs/architecture.md)
 - [Demonstration Commands & Walkthrough](docs/demo-commands.md)
 - [Form Submission & Rubric Checklist](docs/form-submission-checklist.md)
