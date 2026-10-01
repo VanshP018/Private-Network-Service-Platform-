@@ -5,7 +5,14 @@ Use this checklist to ensure all evaluation requirements for the Phase 1 submiss
 ---
 
 ## General Project Metadata
-
+ 
+- **Team Name:** Team X / Private Network Service Platform
+- **Members & Enrollments:**
+  | Name | Enrollment | Role |
+  | --- | --- | --- |
+  | **Antik Mondal** | `2401010084` | Project Lead & Backend Servers A & B |
+  | **Vansh Panwar** | `2401010494` | Nginx Load Balancer & TLS Setup |
+  | **Tanmay Singh** | `2401010476` | Private DNS Server (`dnsmasq`) |
 - **Repository:** Ensure GitHub repository contains clean documentation, configs, and evidence.
 - **Demo Video:** $\le$ 5 minutes, $\le$ 500 MB, Google Drive link set to *"Anyone with the link can view"*.
 - **Naming Convention:** `CN_Phase1_[TeamName/RollNo].mp4`.

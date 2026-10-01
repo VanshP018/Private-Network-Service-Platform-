@@ -33,14 +33,22 @@ The platform creates an isolated, enterprise-grade 3-tier network request flow a
                                         └── 3b. HTTP/1.1 TCP 3002 ──► Backend B (Antik: 10.7.7.19)
 ```
 
-### Node Inventory & Responsibilities
+### Project Members & Responsibilities
 
-| Machine | Role | Hostname / IP | Service | Port | Key Configuration File |
-| --- | --- | --- | --- | --- | --- |
-| **Mac 1** | Private DNS | Antik (`10.7.7.19`) | `dnsmasq` | UDP/TCP `53` | `/opt/homebrew/etc/dnsmasq.conf` |
-| **Mac 2** | Edge / TLS Terminator / Load Balancer | Vansh (`10.7.10.162`) | `nginx` | TCP `80`, `443` | `/opt/homebrew/etc/nginx/servers/cn-project.conf` |
-| **Mac 3** | Application Node A | Antik (`10.7.7.19`) | Python Flask | TCP `3001` | `backend/app.py` (`BACKEND_ID=A`) |
-| **Mac 4** | Application Node B | Antik (`10.7.7.19`) | Python Flask | TCP `3002` | `backend/app.py` (`BACKEND_ID=B`) |
+| Name | Enrollment | Work mode | Role & Node Responsibilities |
+| --- | --- | --- | --- |
+| **Antik Mondal** | `2401010084` | Team (Lead) | Project Lead, 2 Backend Servers (Port 3001 & 3002 on his Mac), Wireshark Forensics |
+| **Vansh Panwar** | `2401010494` | Team | Edge Reverse Proxy & Nginx TLS/HTTPS Load Balancer Setup (Mac 2) |
+| **Tanmay Singh** | `2401010476` | Team | Private DNS Server (`dnsmasq`) Setup & Domain Mapping (Mac 1) |
+
+### Node Inventory & Mapping
+
+| Machine | Role | Member Assigned | Hostname / IP | Service | Port | Key Configuration File |
+| --- | --- | --- | --- | --- | --- | --- |
+| **Mac 1** | Private DNS | Tanmay Singh (`2401010476`) | `10.7.7.19` | `dnsmasq` | UDP/TCP `53` | `/opt/homebrew/etc/dnsmasq.conf` |
+| **Mac 2** | Edge / TLS Terminator / Load Balancer | Vansh Panwar (`2401010494`) | `10.7.10.162` | `nginx` | TCP `80`, `443` | `/opt/homebrew/etc/nginx/servers/cn-project.conf` |
+| **Mac 3** | Application Node A | Antik Mondal (`2401010084`) | `10.7.7.19` | Python Flask | TCP `3001` | `backend/app.py` (`BACKEND_ID=A`) |
+| **Mac 4** | Application Node B | Antik Mondal (`2401010084`) | `10.7.7.19` | Python Flask | TCP `3002` | `backend/app.py` (`BACKEND_ID=B`) |
 
 ---
 

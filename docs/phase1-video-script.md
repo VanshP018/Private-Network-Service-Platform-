@@ -16,14 +16,19 @@ This script is designed for a concise **< 5 minute** screen recording demonstrat
 **Visual:** Display Architecture Diagram in [`docs/architecture.md`](architecture.md).
 
 **Speaker Dialogue:**
-> "Hello everyone. Today we are demonstrating Phase 1 of our Computer Networks project: a Private, Secure, and Load-Balanced Network Service Platform.
+> "Hello everyone. Today our team is demonstrating Phase 1 of our Computer Networks project: a Private, Secure, and Load-Balanced Network Service Platform.
+> 
+> Our team members are:
+> - Antik Mondal (Enrollment: 2401010084) — Project Lead, running the two Python Backend servers on ports 3001 and 3002.
+> - Vansh Panwar (Enrollment: 2401010494) — Configured the Nginx Edge Reverse Proxy and TLS/HTTPS Load Balancer.
+> - Tanmay Singh (Enrollment: 2401010476) — Set up the Private DNS Server using dnsmasq.
 > 
 > In this setup, we have segregated our network into distinct service roles:
-> 1. A private DNS server running dnsmasq.
-> 2. An edge reverse proxy and TLS terminator running Nginx.
-> 3. Two independent Python REST backends: Backend A on port 3001 and Backend B on port 3002.
+> 1. Tanmay's private DNS server running dnsmasq resolves `app.teamX.test` to our edge.
+> 2. Vansh's Nginx edge handles TLS termination and load balancing.
+> 3. Antik's Python backends handle application requests, status reporting, and HTTP caching.
 > 
-> The client resolves the domain name privately, initiates an encrypted HTTPS connection to Nginx, and Nginx balances traffic across the backend pool."
+> The client resolves the domain privately, establishes an encrypted HTTPS connection to Nginx, and Nginx balances traffic across the backend pool."
 
 ---
 

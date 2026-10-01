@@ -11,6 +11,16 @@ The platform demonstrates a complete, isolated private request pipeline:
 
 ---
 
+## Project members
+
+| Name | Enrollment | Work mode | Role & Responsibilities |
+| --- | --- | --- | --- |
+| **Antik Mondal** | 2401010084 | Team (Lead) | Project Lead, 2 Backend Servers on Mac (Port 3001 & 3002), Wireshark Forensics |
+| **Vansh Panwar** | 2401010494 | Team | Edge Reverse Proxy & Nginx TLS/HTTPS Load Balancer Setup |
+| **Tanmay Singh** | 2401010476 | Team | Private DNS Server (`dnsmasq`) Setup & Domain Mapping |
+
+---
+
 ## Architecture
 
 ```mermaid
@@ -43,12 +53,12 @@ flowchart LR
 
 ## Network Inventory
 
-| ID / Node | Role | Address & Port | Service | Protocol Layer |
+| Node | Member & Role | Address & Port | Service | Protocol Layer |
 | --- | --- | --- | --- | --- |
-| **Mac 1** | Primary DNS | `10.7.7.19:53` | `dnsmasq` | Application (UDP/TCP 53) |
-| **Mac 2** | Edge & Reverse Proxy | `10.7.10.162:443` | `nginx` | Presentation / Transport (TLS / TCP 443) |
-| **Mac 3** | Application Node A | `10.7.7.19:3001` | Python REST API | Application (HTTP/1.1) |
-| **Mac 4** | Application Node B | `10.7.7.19:3002` | Python REST API | Application (HTTP/1.1) |
+| **Mac 1** | Tanmay Singh (`2401010476`) — Primary DNS | `10.7.7.19:53` | `dnsmasq` | Application (UDP/TCP 53) |
+| **Mac 2** | Vansh Panwar (`2401010494`) — Edge & Load Balancer | `10.7.10.162:443` | `nginx` | Presentation / Transport (TLS / TCP 443) |
+| **Mac 3** | Antik Mondal (`2401010084`) — Backend A | `10.7.7.19:3001` | Python REST API | Application (HTTP/1.1) |
+| **Mac 4** | Antik Mondal (`2401010084`) — Backend B | `10.7.7.19:3002` | Python REST API | Application (HTTP/1.1) |
 
 ---
 

@@ -4,14 +4,22 @@
 
 Phase 1 establishes a private, secure, and load-balanced network platform across nodes on the local area network. The system separates DNS resolution, reverse proxying / TLS termination, and backend compute nodes into distinct networked endpoints.
 
+## Project members
+
+| Name | Enrollment | Work mode | Role & Node Assignment |
+| --- | --- | --- | --- |
+| **Antik Mondal** | `2401010084` | Team (Lead) | Project Lead, 2 Backend Servers (A & B on Ports 3001 & 3002 on his Mac) |
+| **Vansh Panwar** | `2401010494` | Team | Nginx Reverse Proxy & TLS/HTTPS Load Balancer Setup (Mac 2) |
+| **Tanmay Singh** | `2401010476` | Team | Private DNS Server (`dnsmasq`) Setup & Domain Mapping (Mac 1) |
+
 ## Service & Node Map
 
-| Node / Role | Hostname / ID | Address / Port | Service | Scope |
-| --- | --- | --- | --- | --- |
-| **DNS Server** | `cn-dns1` (Mac 1) | `10.7.7.19:53` | dnsmasq (UDP/TCP 53) | Phase 1 |
-| **Edge / Load Balancer** | `cn-edge1` (Mac 2) | `10.7.10.162:443` | nginx (HTTPS / HTTP/2) | Phase 1 |
-| **Backend A** | `cn-app-a` (Mac 3) | `10.7.7.19:3001` | Python REST API | Phase 1 |
-| **Backend B** | `cn-app-b` (Mac 4) | `10.7.7.19:3002` | Python REST API | Phase 1 |
+| Node / Role | Assigned Member | Hostname / ID | Address / Port | Service | Scope |
+| --- | --- | --- | --- | --- | --- |
+| **DNS Server** | Tanmay Singh (`2401010476`) | `cn-dns1` (Mac 1) | `10.7.7.19:53` | dnsmasq (UDP/TCP 53) | Phase 1 |
+| **Edge / Load Balancer** | Vansh Panwar (`2401010494`) | `cn-edge1` (Mac 2) | `10.7.10.162:443` | nginx (HTTPS / HTTP/2) | Phase 1 |
+| **Backend A** | Antik Mondal (`2401010084`) | `cn-app-a` (Mac 3) | `10.7.7.19:3001` | Python REST API | Phase 1 |
+| **Backend B** | Antik Mondal (`2401010084`) | `cn-app-b` (Mac 4) | `10.7.7.19:3002` | Python REST API | Phase 1 |
 
 > Note: All nodes share the local subnet. When deployed on individual Macs, each service maps to its dedicated IP or container interface.
 
